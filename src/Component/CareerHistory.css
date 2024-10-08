@@ -1,0 +1,134 @@
+.career-history {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #0f0f20;
+    color: #ffffff;
+  }
+  
+  .career-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .career-image {
+    max-width: 80%;
+    height: auto;
+  }
+  
+  .career-history-container {
+    flex: 2;
+    padding-left: 20px;
+  }
+  
+  .career-history-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .career-card {
+    position: relative;
+    background: #161b22;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 1; /* Ensure it's above the animated border */
+  }
+  
+  .career-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Card Border Animation */
+  .career-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background: linear-gradient(90deg, #f7ab0a, #f7ab0a, #9d50bb, #6e48aa);
+    z-index: -1;
+    background-size: 200% 200%;
+    animation: border-animation 4s linear infinite;
+  }
+  
+  @keyframes border-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .career-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  .career-details {
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    /* Consistent background and padding for better readability */
+    background: #1e2330; /* A solid, contrasting background */
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Ensuring text remains readable */
+  .career-details h3,
+  .career-details .company,
+  .career-details p {
+    margin: 0;
+    color: #ffffff; /* Consistent white color for text */
+  }
+  
+  .career-details h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+  }
+  
+  .career-details .company {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #b3b3b3;
+  }
+  
+  .career-details p {
+    color: #d4d4d4;
+  }
+  
+  @media (max-width: 768px) {
+    .career-history {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .career-history-container {
+      padding-left: 0;
+    }
+  
+    .career-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .career-logo {
+      margin-bottom: 10px;
+    }
+  }
+  

@@ -1,0 +1,90 @@
+.expertise-wrapper {
+    position: relative;
+    overflow: hidden; /* To hide the overflow of the marquee */
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    margin: auto;
+    background-color: #0f0f20;
+  }
+  .expertise-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+  }
+  .expertise-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .expertise-marquee {
+    display: flex;
+    gap: 20px;
+    animation: scroll-left 20s linear infinite; /* Continuous scroll */
+    transition: transform 0.3s ease; /* Smooth pause */
+  }
+  
+  .expertise-container:hover .expertise-marquee {
+    animation-play-state: paused; /* Pause marquee animation on hover */
+  }
+  
+  .expertise-card {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1e2330;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    margin: 0 10px; /* Adjust margins to space out cards */
+  }
+  
+  .expertise-card:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+  
+  .expertise-logo {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+  }
+  
+  /* Blurring effect on the edges */
+  .expertise-wrapper:before, .expertise-wrapper:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 1;
+    background: rgba(15, 15, 32, 0); /* Transparent gradient */
+    pointer-events: none;
+  }
+  
+  .expertise-wrapper:before {
+    left: 0;
+    background: linear-gradient(to right, #0f0f20, rgba(15, 15, 32, 0));
+  }
+  
+  .expertise-wrapper:after {
+    right: 0;
+    background: linear-gradient(to left, #0f0f20, rgba(15, 15, 32, 0));
+  }
+  
+  /* Keyframes for scrolling animation */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0); /* Start position */
+    }
+    100% {
+      transform: translateX(-50%); /* End position for seamless scroll */
+    }
+  }
+  
